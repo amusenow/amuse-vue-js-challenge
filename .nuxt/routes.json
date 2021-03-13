@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Product",
+    "path": "/Product",
+    "component": "D:\\\\amuse-vue-js-challenge\\\\pages\\\\Product.vue",
+    "chunkName": "pages/Product",
+    "_name": "_0a784af2"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "D:\\\\amuse-vue-js-challenge\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_cd1de5ec"
+  }
+]

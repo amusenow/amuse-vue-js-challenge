@@ -1,0 +1,17 @@
+{
+  "Category": {
+    "description": "Auto imported from components/Category.vue"
+  },
+  "CategoryFilter": {
+    "description": "Auto imported from components/CategoryFilter.vue"
+  },
+  "Logo": {
+    "description": "Auto imported from components/Logo.vue"
+  },
+  "ProductListings": {
+    "description": "Auto imported from components/ProductListings.vue"
+  },
+  "ProductOverview": {
+    "description": "Auto imported from components/ProductOverview.vue"
+  }
+}
