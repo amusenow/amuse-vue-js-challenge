@@ -78,7 +78,7 @@ describe("CardContainer.vue", () => {
     });
 
     describe("viewMore", () => {
-        test("Increases maxResults by 25", async () => {
+        test("Increases maxResults by 20", async () => {
             expect.assertions(1);
             let wrapper = shallowMount(CardContainer, {
                 computed: {
@@ -90,7 +90,7 @@ describe("CardContainer.vue", () => {
             let button = wrapper.find('[data-q-view-more]');
             button.trigger("click");
             await Vue.nextTick();
-            expect(wrapper.vm.maxResults).toBe(50);
+            expect(wrapper.vm.maxResults).toBe(40);
         });
 
         test("Does not show button when all results have been shown", async () => {

@@ -19,7 +19,7 @@ export default {
     data() {
         return {
             products: products,
-            maxResults: 25
+            maxResults: 20
         }
     },
     computed: {
@@ -37,7 +37,7 @@ export default {
     },
     methods: {
         viewMore() {
-            this.maxResults += 25;
+            this.maxResults += 20;
         }
     }
 }
