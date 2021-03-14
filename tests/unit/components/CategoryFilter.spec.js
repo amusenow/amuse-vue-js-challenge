@@ -1,5 +1,4 @@
 import { shallowMount, enableAutoDestroy, createLocalVue } from '@vue/test-utils';
-import Vue from 'vue'
 import CategoryFilter from '@/components/CategoryFilter.vue';
 import VueRouter from "vue-router";
 import routes from "@/router/index.js"

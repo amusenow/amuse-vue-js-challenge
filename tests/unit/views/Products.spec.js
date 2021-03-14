@@ -1,5 +1,4 @@
 import { shallowMount, enableAutoDestroy } from '@vue/test-utils';
-import Vue from 'vue'
 import Products from '@/views/Products.vue';
 
 describe("CardContainer.vue", () => {
