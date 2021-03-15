@@ -46,7 +46,7 @@ export default {
       .then(function (res) {
         self.storeItems = res.data;
         self.storeItemsCache = res.data;
-        self.maxPage = Math.floor(res.data.length / 50);
+        //self.maxPage = Math.floor(res.data.length / 50);
         self.setCurrentItems();
 
         for (let i = 0; i < self.storeItems.length; i++) {
@@ -75,6 +75,7 @@ export default {
       const startIndex = this.pagination * 50;
       const endIndex = startIndex + 50;
       this.currentPageItems = storeItemsClone.slice(startIndex, endIndex);
+      this.maxPage = Math.floor(this.storeItems.length / 50);
       this.$forceUpdate();
     },
     prevPage: function () {
