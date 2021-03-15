@@ -50,8 +50,8 @@ export default {
         self.setCurrentItems();
 
         for (let i = 0; i < self.storeItems.length; i++) {
-          if (self.categories.indexOf(self.storeItems[i].category) === -1) {
-            self.categories.push(self.storeItems[i].category);
+          if (self.categories.indexOf(self.storeItems[i].category.toLowerCase()) === -1) {
+            self.categories.push(self.storeItems[i].category.toLowerCase());
           }
         }
       });
@@ -101,7 +101,7 @@ export default {
     },
     filterItems: function (filterVal) {
       this.storeItems = this.storeItemsCache.filter(
-        (item) => item.category === filterVal
+        (item) => item.category.toLowerCase() === filterVal
       );
 
       this.pagination = 0; //reset
