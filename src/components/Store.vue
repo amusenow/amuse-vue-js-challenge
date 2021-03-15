@@ -131,6 +131,7 @@ export default {
   width: 200px;
   height: 300px;
   list-style-type: none;
+  vertical-align: top;
 }
 
 .pageNumber {
