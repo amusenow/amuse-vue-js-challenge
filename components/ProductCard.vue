@@ -1,10 +1,10 @@
 <template>
-  <a :href="url" class="btn">
-    <b-card :img-src="imageSrc">
-      <div class="font-weight-bold">{{ product.name }}</div>
+  <a :href="url" class="product-card-link btn">
+    <b-card :img-src="imageSrc" class="product-card">
+      <h4 class="flex-grow-1">{{ product.name }}</h4>
       <div>{{ product.manufacturer }}</div>
       <div v-if="product.thc_percentage">{{ product.thc_percentage }}% THC</div>
-      <div>${{ price }}</div>
+      <div class="font-weight-bold">${{ price }}</div>
     </b-card>
   </a>
 </template>
@@ -35,3 +35,17 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.product-card-link,
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+</style>

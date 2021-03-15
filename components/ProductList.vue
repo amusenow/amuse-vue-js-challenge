@@ -6,7 +6,7 @@
       cols="12"
       md="6"
       lg="4"
-      class="pb-4"
+      class="pb-4 d-flex flex-column"
     >
       <ProductCard
         :product="product"
