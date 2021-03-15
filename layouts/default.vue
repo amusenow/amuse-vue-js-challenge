@@ -1,8 +1,17 @@
 <template>
   <div>
+    <ConfirmAgeModal />
     <Nuxt />
   </div>
 </template>
+
+<script>
+import ConfirmAgeModal from '../components/ConfirmAgeModal'
+
+export default {
+  components: { ConfirmAgeModal }
+}
+</script>
 
 <style>
 html {
