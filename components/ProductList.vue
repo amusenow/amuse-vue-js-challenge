@@ -1,11 +1,11 @@
 <template>
   <b-row>
     <b-col
-      v-for="product of products"
+      v-for="product of filteredProducts"
       :key="product.entity_id"
       cols="12"
-      sm="6"
-      md="4"
+      md="6"
+      lg="4"
       class="pb-4"
     >
       <ProductCard
@@ -25,6 +25,16 @@ export default {
   data: () => ({
     products: []
   }),
+  computed: {
+    categories () {
+      return this.$route.query.categories ?? []
+    },
+    filteredProducts() {
+      return this.products.filter(
+        product => this.categories.includes(product.category.toLowerCase())
+      )
+    },
+  },
   async created () {
     // Load products naively.
     this.products = await getProducts()

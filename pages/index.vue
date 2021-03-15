@@ -1,7 +1,13 @@
 <template>
   <div class="container">
-    <!-- CategoryFilter -->
-    <ProductList />
+    <b-row class="w-100">
+      <b-col md="1" class="sidebar">
+        <CategoryFilter class="sticky-top" />
+      </b-col>
+      <b-col>
+        <ProductList />
+      </b-col>
+    </b-row>
   </div>
 </template>
 
@@ -15,7 +21,10 @@ export default {}
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
   text-align: center;
+}
+
+.sidebar {
+  min-width: 200px;
 }
 </style>
