@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <!-- CategoryFilter -->
-    <!-- ProductList -->
+    <ProductList />
   </div>
 </template>
 
