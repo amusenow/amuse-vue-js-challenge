@@ -42,7 +42,7 @@ export default {
 
     //"quick and dirty" pagination on client only in interest of time rm
     axios
-      .get("http://localhost:4000/endpoints/products.json")
+      .get("/endpoints/products.json")
       .then(function (res) {
         self.storeItems = res.data;
         self.storeItemsCache = res.data;
