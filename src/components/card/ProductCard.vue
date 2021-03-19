@@ -65,10 +65,6 @@ export default {
     },
   },
 
-  data: () => ({
-    failedImage: false,
-  }),
-
   computed: {
     productImage() {
       return this.product.image_url === ""
