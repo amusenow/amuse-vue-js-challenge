@@ -1,0 +1,26 @@
+@import "global";
+@import "components";
+
+html, body {
+  .v-application {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+.amuse-text-color {
+  &-base {
+    color: $amuse-base-color;
+  }
+
+  &-primary {
+    color: $amuse-primary-color;
+  }
+
+  &-secondary {
+    color: $amuse-secondary-color;
+  }
+
+  &-white {
+    color: $amuse-white-color;
+  }
+}

@@ -1,0 +1,16 @@
+.product-card {
+  .v-card {
+    &__title {
+      min-height: 100px;
+    }
+  }
+
+  .v-chip {
+    background-color: $amuse-secondary-color !important;
+    color: $amuse-white-color !important;
+  }
+
+  .v-btn {
+    color: $amuse-primary-color;
+  }
+}

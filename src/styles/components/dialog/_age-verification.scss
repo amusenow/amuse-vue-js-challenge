@@ -1,0 +1,25 @@
+.dialog-age-verification {
+  border-radius: 1rem;
+
+  .v-card {
+    .button-verification {
+      @mixin verify-button {
+        text-transform: none;
+        border-radius: 1rem !important;
+        margin: 24px 0 24px 0;
+      }
+
+      &-yes {
+        @include verify-button;
+        background-color: $amuse-primary-color;
+        color: $amuse-white-color;
+      }
+
+      &-no {
+        @include verify-button;
+        background-color: $amuse-white-color;
+        color: $amuse-primary-color;
+      }
+    }
+  }
+}
