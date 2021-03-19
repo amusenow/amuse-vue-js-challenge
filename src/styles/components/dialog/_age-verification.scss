@@ -1,6 +1,10 @@
 .dialog-age-verification {
   border-radius: 1rem;
 
+  .logo {
+    max-height: 300px;
+  }
+
   .v-card {
     .button-verification {
       @mixin verify-button {
