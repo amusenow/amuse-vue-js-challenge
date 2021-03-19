@@ -6,37 +6,43 @@
     max-width="600px"
   >
     <v-card class="d-flex flex-column">
-      <img
-        alt="Amuse"
-        class="logo mb-4"
-        src="@/assets/images/misc/amuse-misc-1.jpg"
-      />
-      <div class="text-center">
-        <div class="display-1 font-weight-bold mb-6">
-          Relax & Shop The Finest Cannabis Products
-        </div>
-        <div class="display-1 font-weight-medium">Are you 21+ ?</div>
-      </div>
-      <v-card-actions class="button-verification">
-        <div class="container">
-          <v-btn
-            class="button button-verification-yes elevation-0"
-            @click="verify('Yes')"
-            x-large
-            block
-          >
-            Yes
-          </v-btn>
-          <v-btn
-            class="button-verification-no elevation-0"
-            @click="verify('No')"
-            x-large
-            block
-          >
-            No
-          </v-btn>
-        </div>
-      </v-card-actions>
+      <v-container fluid>
+        <v-row no-gutters>
+          <v-col cols="12">
+            <v-img
+              alt="Amuse"
+              class="logo mb-4"
+              src="@/assets/images/misc/amuse-misc-1.jpg"
+            />
+            <div class="text-center">
+              <div class="display-1 font-weight-bold mb-6">
+                Relax & Shop The Finest Cannabis Products
+              </div>
+              <div class="display-1 font-weight-medium">Are you 21+ ?</div>
+            </div>
+            <v-card-actions class="button-verification">
+              <div class="container">
+                <v-btn
+                  class="button button-verification-yes elevation-0"
+                  @click="verify('Yes')"
+                  x-large
+                  block
+                >
+                  Yes
+                </v-btn>
+                <v-btn
+                  class="button-verification-no elevation-0"
+                  @click="verify('No')"
+                  x-large
+                  block
+                >
+                  No
+                </v-btn>
+              </div>
+            </v-card-actions>
+          </v-col>
+        </v-row>
+      </v-container>
     </v-card>
   </v-dialog>
 </template>

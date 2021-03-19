@@ -2,7 +2,12 @@
   border-radius: 1rem;
 
   .logo {
-    max-height: 300px;
+    .v-image {
+      &__image {
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+      }
+    }
   }
 
   .v-card {
