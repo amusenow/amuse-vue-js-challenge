@@ -1,0 +1,29 @@
+{
+  "name": "amuse-vue-js-challenge",
+  "version": "1.0.0",
+  "description": "Amuse is an e-commerce company targeting the cannabis industry in Los Angeles.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.0.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.1",
+    "@vue/compiler-sfc": "^3.0.5",
+    "vite": "^2.1.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wishinghand/amuse-vue-js-challenge.git"
+  },
+  "author": "Jason Land",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wishinghand/amuse-vue-js-challenge/issues"
+  },
+  "homepage": "https://github.com/wishinghand/amuse-vue-js-challenge#readme"
+}
