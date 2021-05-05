@@ -1,0 +1,48 @@
+p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.product_card {
+  box-shadow: 2px 8px 10px 4px rgb(0 0 0 / 5%);
+  border-radius: 25px;
+  margin: 10px 10px;
+}
+
+.product_card .image {
+  height: 100px;
+  width: 100px;
+}
+
+.product_card .padding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 15px;
+}
+
+.product_card .content {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.product_card .padding .content .price {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.product_card .padding .content .name {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.product_card .content .add_to_cart {
+  width: 80%;
+  outline: none;
+  border: none;
+  color: white;
+  background: rgba(247, 0, 153, 0.5);
+  padding: 5px;
+  border-radius: 20px;
+  margin: auto;
+}
