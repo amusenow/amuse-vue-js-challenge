@@ -144,13 +144,7 @@ export default {
       { label: 'Price Low to High', value: 'price' }
     ]);
 
-    const addToCart = (item) => {
-      console.log('add to cart', item);
-    };
-
-    const changeLayout = () => {
-      layout.value = layout.value === 'grid' ? 'list' : 'grid';
-    };
+    const addToCart = (item) => console.table(item);
 
     const getCategories = () => {
       products.value.forEach((product) => {
@@ -203,7 +197,6 @@ export default {
       sortOptions,
       loading,
       addToCart,
-      changeLayout,
       filterProducts,
       onSortChange
     };

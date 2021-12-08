@@ -16,7 +16,7 @@
 
     <template #footer>
       <div class="grid">
-        <div class="col-6 md:col-3">
+        <div class="col-6 md:col-3 md:col-offset-6">
           <Button label="No" @click="exit" class="p-button-outlined" />
         </div>
 
