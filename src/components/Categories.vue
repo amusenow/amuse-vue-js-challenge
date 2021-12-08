@@ -28,7 +28,7 @@
             placeholder="Sort By Price"
             v-model="sortKey"
             :options="sortOptions"
-            :showClear="true"
+            @change="onSortChange($event)"
           />
         </div>
       </div>
@@ -175,6 +175,21 @@ export default {
       else products.value = originalProducts.value;
     };
 
+    const onSortChange = (event) => {
+      const value = event.value.value;
+      const sortValue = event.value;
+
+      if (value.indexOf('!') === 0) {
+        sortOrder.value = -1;
+        sortField.value = value.substring(1, value.length);
+        sortKey.value = sortValue;
+      } else {
+        sortOrder.value = 1;
+        sortField.value = value;
+        sortKey.value = sortValue;
+      }
+    };
+
     onMounted(() => getData());
 
     return {
@@ -189,7 +204,8 @@ export default {
       loading,
       addToCart,
       changeLayout,
-      filterProducts
+      filterProducts,
+      onSortChange
     };
   }
 };
