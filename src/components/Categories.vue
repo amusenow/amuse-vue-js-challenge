@@ -12,12 +12,22 @@
   >
     <template #header>
       <div class="grid">
-        <div class="col-6">
+        <div class="col-3">
           <Dropdown
             optionLabel="label"
             placeholder="Sort By Price"
             v-model="sortKey"
             :options="sortOptions"
+          />
+        </div>
+
+        <div class="col-3">
+          <Dropdown
+            placeholder="Filter"
+            v-model="filter"
+            :options="categories"
+            :showClear="true"
+            @change="filterProducts"
           />
         </div>
 
@@ -35,6 +45,12 @@
               <img
                 :alt="slotProps.data.name"
                 :src="`https://res.cloudinary.com/amusenow/w_auto,c_scale/f_auto,q_auto,w_384/${slotProps.data.image_url}`"
+              />
+
+              <i
+                :class="`pi ${
+                  slotProps.data.is_cannabis ? 'pi-bolt' : 'pi-times'
+                }`"
               />
 
               <div class="col-12">
@@ -57,8 +73,8 @@
               </div>
 
               <div class="col-12 sm:col-6 sm:text-right">
-                <strong>THC Percentage: </strong>
-                <span>{{ slotProps.data.thc_percentage }}</span>
+                <strong>THC: </strong>
+                <span>{{ slotProps.data.thc_percentage }}%</span>
               </div>
 
               <div class="col-12 sm:col-6">
@@ -114,13 +130,13 @@
 
 <script>
 import { onMounted, ref } from 'vue';
-import { getAllProducts } from '@/services/api-util';
 import Button from 'primevue/button';
 import Card from 'primevue/card';
 import DataView from 'primevue/dataview';
 import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions';
 import Dropdown from 'primevue/dropdown';
 import ProgressSpinner from 'primevue/progressspinner';
+import { getAllProducts } from '@/services/api-util';
 
 export default {
   components: {
@@ -134,8 +150,10 @@ export default {
 
   setup() {
     const categories = ref([]);
+    const filter = ref();
     const layout = ref('grid');
     const loading = ref(true);
+    const originalProducts = ref([]);
     const products = ref([]);
     const sortKey = ref();
     const sortOrder = ref();
@@ -159,18 +177,28 @@ export default {
           categories.value.push(product.category.toLowerCase());
         }
       });
-      console.log(categories.value);
       loading.value = false;
     };
 
     const getData = async () => {
       products.value = await getAllProducts();
+      originalProducts.value = JSON.parse(JSON.stringify(products.value));
       getCategories();
+    };
+
+    const filterProducts = () => {
+      if (filter.value)
+        products.value = originalProducts.value.filter(
+          (product) => product.category.toLowerCase() === filter.value
+        );
+      else products.value = originalProducts.value;
     };
 
     onMounted(() => getData());
 
     return {
+      categories,
+      filter,
       products,
       layout,
       sortKey,
@@ -179,13 +207,18 @@ export default {
       sortOptions,
       loading,
       addToCart,
-      changeLayout
+      changeLayout,
+      filterProducts
     };
   }
 };
 </script>
 
-<style lang="scss" coped>
+<style lang="scss" scoped>
+img {
+  width: 100%;
+}
+
 .p-card {
   height: 100%;
 }
@@ -199,7 +232,13 @@ export default {
   }
 }
 
-img {
-  width: 100%;
+.pi {
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  &.pi-bolt {
+    color: green;
+  }
 }
 </style>
