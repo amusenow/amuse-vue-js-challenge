@@ -12,16 +12,7 @@
   >
     <template #header>
       <div class="grid">
-        <div class="col-3">
-          <Dropdown
-            optionLabel="label"
-            placeholder="Sort By Price"
-            v-model="sortKey"
-            :options="sortOptions"
-          />
-        </div>
-
-        <div class="col-3">
+        <div class="col-6">
           <Dropdown
             placeholder="Filter"
             v-model="filter"
@@ -32,7 +23,13 @@
         </div>
 
         <div class="col-6 text-right">
-          <DataViewLayoutOptions v-model="layout" />
+          <Dropdown
+            optionLabel="label"
+            placeholder="Sort By Price"
+            v-model="sortKey"
+            :options="sortOptions"
+            :showClear="true"
+          />
         </div>
       </div>
     </template>
@@ -86,17 +83,18 @@
                 <strong>SKU: </strong>
                 <span>{{ slotProps.data.sku }}</span>
               </div>
-
-              <!-- <p>{{ slotProps.data.entity_id }}</p> -->
-              <!-- <p>{{ slotProps.data.is_cannabis }}</p> -->
-              <!-- <p>{{ slotProps.data.quantity }}</p> -->
             </div>
           </template>
 
           <template #footer>
             <div class="grid">
               <div class="col-6">
-                <a target="_self" :href="slotProps.data.url">Read More</a>
+                <a
+                  target="_self"
+                  :href="`https://amuse.com${slotProps.data.url}`"
+                >
+                  Read More
+                </a>
               </div>
 
               <div class="col text-right">
@@ -110,21 +108,6 @@
         </Card>
       </div>
     </template>
-
-    <template #list="slotProps">
-      {{ slotProps.data.category }}
-      {{ slotProps.data.entity_id }}
-      {{ slotProps.data.image_url }}
-      {{ slotProps.data.is_cannabis }}
-      {{ slotProps.data.manufacturer }}
-      {{ slotProps.data.name }}
-      {{ slotProps.data.price }}
-      {{ slotProps.data.quantity }}
-      {{ slotProps.data.sku }}
-      {{ slotProps.data.sub_category }}
-      {{ slotProps.data.thc_percentage }}
-      {{ slotProps.data.url }}
-    </template>
   </DataView>
 </template>
 
@@ -133,7 +116,6 @@ import { onMounted, ref } from 'vue';
 import Button from 'primevue/button';
 import Card from 'primevue/card';
 import DataView from 'primevue/dataview';
-import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions';
 import Dropdown from 'primevue/dropdown';
 import ProgressSpinner from 'primevue/progressspinner';
 import { getAllProducts } from '@/services/api-util';
@@ -143,7 +125,6 @@ export default {
     Button,
     Card,
     DataView,
-    DataViewLayoutOptions,
     Dropdown,
     ProgressSpinner
   },
