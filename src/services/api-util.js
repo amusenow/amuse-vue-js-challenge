@@ -4,7 +4,7 @@ const apiClient = axios.create({
   baseURL: ''
 });
 
-const getCategories = async () => {
+const getAllProducts = async () => {
   const url = '/products.json';
 
   try {
@@ -15,4 +15,4 @@ const getCategories = async () => {
   }
 };
 
-export { getCategories };
+export { getAllProducts };
